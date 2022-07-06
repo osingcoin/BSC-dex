@@ -138,7 +138,7 @@ async function getQuotation() {
 
   // Get estimated quotation and Gas fee
   const quote = await Moralis.Plugins.oneInch.quote({
-    chain: "eth", // The blockchain you want to use (eth/bsc/polygon)
+    chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
     fromTokenAddress: trade.from.address, // The token you want to swap
     toTokenAddress: trade.to.address, // The token you want to receive
     amount: amount,
