@@ -48,7 +48,7 @@ async function login() {
 async function availableTokens() {
   // Get all tokens
   const result = await Moralis.Plugins.oneInch.getSupportedTokens({
-    chain: "eth", // The blockchain you want to use (eth/bsc/polygon)
+    chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
   });
   tokens = result.tokens;
 
