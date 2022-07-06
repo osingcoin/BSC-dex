@@ -165,7 +165,7 @@ async function validateSwap() {
   // Validate if User can Swap
   if (trade.from.symbol !== "ETH") {
     const allowance = await Moralis.Plugins.oneInch.hasAllowance({
-      chain: "eth", // The blockchain you want to use (eth/bsc/polygon)
+      chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
       fromTokenAddress: trade.from.address, // The token you want to swap
       fromAddress: address, // Your wallet address
       amount: amount,
@@ -175,7 +175,7 @@ async function validateSwap() {
     // If user has allowance
     if (!allowance) {
       await Moralis.Plugins.oneInch.approve({
-        chain: "eth", // The blockchain you want to use (eth/bsc/polygon)
+        chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
         tokenAddress: trade.from.address, // The token you want to swap
         fromAddress: address, // Your wallet address
       });
@@ -194,7 +194,7 @@ async function validateSwap() {
 async function Swap(userAddress, amount) {
   // Swap token
   return Moralis.Plugins.oneInch.swap({
-    chain: "eth", // The blockchain you want to use (eth/bsc/polygon)
+    chain: "bsc", // The blockchain you want to use (eth/bsc/polygon)
     fromTokenAddress: trade.from.address, // The token you want to swap
     toTokenAddress: trade.to.address, // The token you want to receive
     amount: amount,
